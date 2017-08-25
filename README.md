@@ -32,26 +32,9 @@ client.contact.fetchAll(function(err, contacts){
 
 ## API : photo (&videos)
 
-```
-//list icloud photo albums
-client.photo.fetchAlbums(function(err, albums){
-  //albums are like [{album:title}, {album:title}]
-});
-
-// list photo (&video) in an album
-client.photo.fetchMedias(album, function(err, medias){
-  //medias are like [{photo:title}, {photo:title}]
-});
-
-
-// download something
-client.photo.downloadMedia(media, [quality = original], function(err, stream){
-  var dest = fs.createWriteStream(photo.title);
-  stream.pipe(dest).on("end", function(){
-    console.log("TADAAAA");
-  });
-});
-```
+In this particular version photo support was dropped.
+I didnt want to investigate it so I commented this piece out.
+Original version of this npm can be found at https://github.com/131/icloud-api
 
 # Notes
 iCloud use well balanced GUID indexed JSON models for contacts & medias, so this API forward them unmodified (see examples above).
@@ -64,5 +47,3 @@ iCloud is a property of Apple and they might do whatever they want with it, anyt
 * 131
 * https://github.com/matin/icloud/
 * https://github.com/picklepete/pyicloud/
-
-
